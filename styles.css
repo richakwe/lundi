@@ -1,0 +1,582 @@
+/* Reset some basic elements */
+body, h1, h2, h3, p, ul, ol, li, form, input, textarea {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Global styles */
+/* ... other CSS rules ... */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    
+    /* Background image settings */
+    background-image: url('lundi.jpeg'); /* Replace with your image path */
+    background-size: cover; /* This will make the image cover the entire viewport */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-attachment: fixed; /* Keeps the background fixed when scrolling, optional */
+    
+    /* Optional: for better text readability over images */
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+/* If you need to ensure content stands out over the background */
+main, footer, header {
+    background-color: rgba(255, 255, 255, 0.6); /* Semi-transparent white background */
+    color: #333; /* Reset text color if needed */
+    text-shadow: none; /* Remove text shadow if applied globally */
+}
+
+/* ... rest of your CSS ... */
+
+/* Header styles */
+header {
+    background-color: #0056b3;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px;
+    margin-left: 20px;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+nav ul li a.active {
+    font-weight: bold;
+}
+
+/* Ensure the body and html take up full height */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Your main content should be flexible */
+main {
+    flex: 1 0 auto; /* This allows the main content to grow and shrink */
+}
+
+/* Footer styles */
+footer {
+    flex-shrink: 0; /* Prevent footer from shrinking */
+    background-color: #0056b3;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.social-media {
+    margin-top: 10px;
+}
+
+/* Rest of your footer styles */
+.social-media a {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.social-media img {
+    vertical-align: middle;
+    width: 32px;
+    height: 32px;
+    transition: all 0.3s ease;
+}
+
+.social-media img:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+.student-life {
+    background-color: rgba (255, 255, 255, 0.8);
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.student-life h2 {
+    color: #0056b3;
+    margin-bottom: 30px;
+}
+
+.student-life-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.life-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.life-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform .3s ease;
+}
+
+.life-item:hover img {
+    transform: scale(1.1);
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 86, 179, 0.8);
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    transition: .5s ease;
+    color: white;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.life-item:hover .overlay {
+    height: 100%;
+}
+
+.overlay h3, .overlay p {
+    margin: 0;
+    padding: 0;
+}
+
+.overlay h3 {
+    font-size: 1.2em;
+}
+
+.overlay p {
+    font-size: 0.9em;
+    margin-top: 10px;
+}
+
+.overlay a {
+    color: #fff;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 10px;
+    padding: 5px 10px;
+    border: 1px solid #fff;
+    border-radius: 4px;
+}
+
+.overlay a:hover {
+    background-color: #fff;
+    color: #0056b3;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+    .student-life-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Main content styles */
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+/* General form styles */
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+}
+
+form input, form textarea {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+form button {
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+form button:hover {
+    background-color: #004494;
+}
+
+/* Footer styles */
+footer {
+    background-color: #0056b3;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer .social-media a {
+    color: white;
+    margin: 0 5px;
+    text-decoration: none;
+}
+
+/* Specific page styles */
+
+/* About page */
+.leadership-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.leader {
+    text-align: center;
+}
+
+.leader img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Academics page */
+.department-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.department {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Admissions page */
+.process ol, .deadlines ul, .fees ul {
+    padding-left: 20px;
+}
+
+/* Events page */
+.event-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.event {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Faculty page */
+.faculty-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.faculty-member {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.faculty-member img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+/* Fees page */
+.fee-details table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.fee-details th, .fee-details td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.fee-details th {
+    background-color: #f2f2f2;
+    color: #0056b3;
+}
+
+.fee-details tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Past Events page */
+.event-list h2 {
+    color: #0056b3;
+    margin-top: 20px;
+}
+
+.event-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.event-list li {
+    background-color: #f0f0f0;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .menu-toggle {
+        display: block;
+    }
+    
+    nav {
+        display: none;
+    }
+    
+    nav.active {
+        display: block;
+        width: 100%;
+    }
+    
+    nav ul {
+        flex-direction: column;
+    }
+    
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .leadership-grid, .department-grid, .event-grid, .faculty-list {
+        grid-template-columns: 1fr;
+    }
+
+    .fee-details table, .fee-details thead, .fee-details tbody, .fee-details th, .fee-details td, .fee-details tr {
+        display: block;
+    }
+    
+    .fee-details thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+    
+    .fee-details tr {
+        border: 1px solid #ccc;
+    }
+    
+    .fee-details td {
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding-left: 50%;
+    }
+    
+    .fee-details td:before {
+        position: absolute;
+        top: 6px;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        content: attr(data-label);
+        font-weight: bold;
+    }
+    
+    .fee-details td:last-child {
+        border-bottom: 0;
+    }
+}
+/* ... your existing CSS ... */
+
+#mathematics .resource-grid, #mathematics .teacher-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.resource, .teacher {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.resource h3, .teacher h3 {
+    color: #0056b3;
+    margin-top: 0;
+}
+
+.resource a, .teacher a {
+    color: #0056b3;
+    text-decoration: none;
+}
+
+.resource a:hover, .teacher a:hover {
+    text-decoration: underline;
+}
+
+.teacher img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .resource-grid, .teacher-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* ... your existing CSS ... */
+
+#math-olympiad ul, #math-olympiad ol {
+    padding-left: 20px;
+}
+
+#math-olympiad a {
+    color: #0056b3;
+    text-decoration: none;
+}
+
+#math-olympiad a:hover {
+    text-decoration: underline;
+}
+
+#math-olympiad strong {
+    color: #0056b3;
+}
+/* ... your existing CSS ... */
+
+#registration-form {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+#olympiadForm label {
+    display: block;
+    margin-top: 10px;
+}
+
+#olympiadForm input, #olympiadForm select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#olympiadForm button {
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+#olympiadForm button:hover {
+    background-color: #004494;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    #registration-form {
+        padding: 0 20px;
+    }
+}
+/* ... your existing CSS ... */
+
+#math-resources .resource-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+#math-resources .resource {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+#math-resources .resource h3 {
+    color: #0056b3;
+    margin-top: 0;
+}
+
+#math-resources .resource a {
+    color: #0056b3;
+    text-decoration: none;
+}
+
+#math-resources .resource a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .resource-grid {
+        grid-template-columns: 1fr;
+    }
+}

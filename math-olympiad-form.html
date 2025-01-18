@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Olympiad Registration - Lundi Park Primary School</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/log.png" alt="School Logo">
+        </div>
+        <button class="menu-toggle">Menu</button>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="academics.html">Academics</a></li>
+                <li><a href="admissions.html">Admissions</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="registration-form">
+            <h1>Math Olympiad Registration Form</h1>
+            <p>Please fill out the form below to register for the Math Olympiad at Sample School.</p>
+
+            <form id="olympiadForm" onsubmit="return validateForm()">
+                <label for="fullName">Full Name:</label>
+                <input type="text" id="fullName" name="fullName" required>
+
+                <label for="grade">Grade:</label>
+                <select id="grade" name="grade" required>
+                    <option value="">Select Grade</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                </select>
+
+                <label for="studentId">Student ID:</label>
+                <input type="text" id="studentId" name="studentId" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="parentName">Parent/Guardian Name:</label>
+                <input type="text" id="parentName" name="parentName" required>
+
+                <label for="parentPhone">Parent/Guardian Phone:</label>
+                <input type="tel" id="parentPhone" name="parentPhone" required>
+
+                <label for="category">Competition Category:</label>
+                <select id="category" name="category" required>
+                    <option value="junior">Junior (Grades 5-8)</option>
+                    <option value="senior">Senior (Grades 9-12)</option>
+                </select>
+
+                <label>
+                    <input type="checkbox" id="terms" name="terms" required>
+                    I agree to the terms and conditions of the event.
+                </label>
+
+                <button type="submit">Register</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Lundi Park Primary School. All rights reserved.</p>
+        <div class="social-media">
+            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+                <img src="images/facebook.svg" alt="Follow us on Facebook" width="32" height="32">
+            </a>    
+            <a href="https://twitter.com/yourhandle" target="_blank" rel="noopener noreferrer">
+                <img src="images/twitter.svg" alt="Follow us on Twitter" width="32" height="32">
+            </a>
+    
+            <a href="https://www.instagram.com/yourusername" target="_blank" rel="noopener noreferrer">
+                <img src="images/instagram.svg" alt="Follow us on Instagram" width="32" height="32">
+    
+        </div>
+    </footer>
+
+    <script>
+        function validateForm() {
+            let form = document.getElementById('olympiadForm');
+            let fields = form.querySelectorAll('input[required], select[required], textarea[required]');
+            for(let field of fields) {
+                if(!field.value) {
+                    alert('Please fill out all required fields.');
+                    return false;
+                }
+            }
+            if(!form.terms.checked) {
+                alert('You must agree to the terms and conditions to register.');
+                return false;
+            }
+            alert('Registration submitted successfully!'); // In a real scenario, this would be replaced with actual form submission logic
+            return false; // Prevent form from actually submitting since we're not handling real server communication here
+        }
+    </script>
+</body>
+</html>
