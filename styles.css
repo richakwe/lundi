@@ -958,3 +958,169 @@ figcaption {
 .back-to-news:hover {
     background-color: #004494;
 }
+
+/* ... your existing CSS ... */
+
+#results-portal {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#results-portal button {
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+#results-portal button:hover {
+    background-color: #004494;
+}
+
+#resultsDisplay {
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.hidden {
+    display: none;
+}
+
+#resultsTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#resultsTable th, #resultsTable td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+#resultsTable th {
+    background-color: #f2f2f2;
+    color: #0056b3;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+    #results-portal {
+        padding: 0 20px;
+    }
+}
+
+/* ... your existing CSS ... */
+
+#class-schedule {
+    padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+#class-schedule h1 {
+    color: #0056b3;
+    text-align: center;
+}
+
+.schedule-filter {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.schedule-filter select {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-left: 10px;
+}
+
+#scheduleTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#scheduleTable th, #scheduleTable td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+#scheduleTable th {
+    background-color: #f2f2f2;
+    color: #0056b3;
+}
+
+#scheduleTable tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    #scheduleTable, #scheduleTable thead, #scheduleTable tbody, #scheduleTable th, #scheduleTable td, #scheduleTable tr {
+        display: block;
+    }
+
+    #scheduleTable thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    #scheduleTable tr {
+        border: 1px solid #ccc;
+    }
+
+    #scheduleTable td {
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding-left: 50%;
+    }
+
+    #scheduleTable td:before {
+        position: absolute;
+        top: 6px;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        content: attr(data-label);
+        font-weight: bold;
+    }
+
+    #scheduleTable td:last-child {
+        border-bottom: 0;
+    }
+
+    .schedule-filter {
+        text-align: left;
+    }
+
+    .schedule-filter select {
+        width: 100%;
+        margin-left: 0;
+    }
+}

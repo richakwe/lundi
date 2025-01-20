@@ -129,3 +129,38 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const resultsForm = document.getElementById('resultsForm');
+    const resultsDisplay = document.getElementById('resultsDisplay');
+
+    resultsForm.addEventListener('submit', function(event) {
+        event.preventDefault();  // Prevent actual form submission for this example
+        // Here you would typically send a request to a server to fetch results
+        resultsDisplay.classList.remove('hidden');  // Show results area
+        // In a real scenario, you'd populate #resultsTable with data from the server
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const gradeFilter = document.getElementById('grade');
+    const scheduleTable = document.getElementById('scheduleTable');
+
+    gradeFilter.addEventListener('change', function() {
+        const selectedGrade = this.value;
+        filterSchedule(selectedGrade);
+    });
+
+    function filterSchedule(grade) {
+        const rows = scheduleTable.querySelectorAll('tbody tr');
+        
+        rows.forEach(row => {
+            const gradeAttribute = row.getAttribute('data-grade');
+            if (grade === 'all' || gradeAttribute.includes(grade)) {
+                row.style.display = '';  // Show the row
+            } else {
+                row.style.display = 'none';  // Hide the row
+            }
+        });
+    }
+});
