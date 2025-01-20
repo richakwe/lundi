@@ -105,3 +105,27 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initial call to update dynamic content if needed
     updateDynamicContent();
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const rsvpForm = document.getElementById('rsvpForm');
+
+    rsvpForm.addEventListener('submit', function(event) {
+        let name = document.getElementById('name').value;
+        let email = document.getElementById('email').value;
+        let terms = document.getElementById('terms').checked;
+
+        if (!name || !email || !terms) {
+            alert('Please fill out all required fields and agree to the terms.');
+            event.preventDefault();
+            return;
+        }
+
+        if (!/\S+@\S+\.\S+/.test(email)) {
+            alert('Please enter a valid email address.');
+            event.preventDefault();
+        } else {
+            alert('RSVP submitted successfully! Thank you for your response.');
+            event.preventDefault(); // Prevent form from actually submitting if not using server-side handling
+        }
+    });
+});

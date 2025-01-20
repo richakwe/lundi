@@ -603,3 +603,167 @@ footer .social-media a {
         position: static;
     }
 }
+/* ... your existing CSS ... */
+
+#rsvp {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input, 
+.form-group select, 
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.form-group textarea {
+    height: 100px;
+}
+
+button[type="submit"] {
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+button[type="submit"]:hover {
+    background-color: #004494;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+    #rsvp {
+        padding: 0 20px;
+    }
+}
+/* ... your existing CSS ... */
+
+#rsvp-spring-concert {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+}
+
+#rsvp-spring-concert h1 {
+    color: #0056b3;
+    text-align: center;
+}
+
+#rsvp-spring-concert p {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input, 
+.form-group select, 
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.form-group textarea {
+    height: 100px;
+}
+
+button[type="submit"] {
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-top: 10px;
+    display: block;
+    width: 100%;
+}
+
+button[type="submit"]:hover {
+    background-color: #004494;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+    #rsvp-spring-concert {
+        padding: 0 20px;
+    }
+}
+/* ... your existing CSS ... */
+
+#gallery {
+    padding: 20px;
+}
+
+#gallery h1 {
+    color: #0056b3;
+    text-align: center;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Lightbox Styles */
+.lg-backdrop {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.lg-outer .lg-item.lg-complete.lg-zoomable .lg-img-wrap {
+    cursor: zoom-in;
+}
+
+.lg-zoom-in .lg-img-wrap {
+    cursor: zoom-out;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+}

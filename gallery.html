@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Sample School</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="school-logo.png" alt="School Logo">
+        </div>
+        <button class="menu-toggle">Menu</button>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="academics.html">Academics</a></li>
+                <li><a href="admissions.html">Admissions</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="gallery.html" class="active">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="gallery">
+            <h1>School Gallery</h1>
+            <p>Explore moments from our school life:</p>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="images/lab.avif" alt="Science Lab" data-lightbox="gallery">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/sports1.jpg" alt="Sports Day" data-lightbox="gallery">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/art.jpg" alt="Art Class" data-lightbox="gallery">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/play.jpg" alt="School Play" data-lightbox="gallery">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/graduation.jpg" alt="School Play" data-lightbox="gallery">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/library.jpg" alt="School Play" data-lightbox="gallery">
+                </div>
+                <!-- Add more gallery items as needed -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Lundi Park Primary School. All rights reserved.</p>
+        <div class="social-media">
+            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+                <img src="images/facebook.svg" alt="Follow us on Facebook" width="32" height="32">
+            </a>    
+            <a href="https://twitter.com/yourhandle" target="_blank" rel="noopener noreferrer">
+                <img src="images/twitter.svg" alt="Follow us on Twitter" width="32" height="32">
+            </a>
+    
+            <a href="https://www.instagram.com/yourusername" target="_blank" rel="noopener noreferrer">
+                <img src="images/instagram.svg" alt="Follow us on Instagram" width="32" height="32">
+    
+        </div>
+    </footer>
+
+    <!-- Lightbox library -->
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery.js@1.6.12/dist/js/lightgallery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery.js@1.6.12/dist/js/lg-thumbnail.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery.js@1.6.12/dist/js/lg-zoom.min.js"></script>
+</body>
+</html>
