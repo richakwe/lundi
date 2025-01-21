@@ -51,7 +51,7 @@ header {
 }
 
 .menu-toggle {
-    display: block;
+    display: none;
     background: none;
     border: none;
     color: white;
@@ -1726,3 +1726,6 @@ figcaption {
         margin: 10px 0;
     }
 }
+
+
+
