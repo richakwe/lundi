@@ -51,7 +51,7 @@ header {
 }
 
 .menu-toggle {
-    display: none;
+    display: block;
     background: none;
     border: none;
     color: white;
@@ -1701,5 +1701,28 @@ figcaption {
 @media (max-width: 600px) {
     #grades {
         padding: 0 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .menu-toggle {
+        display: block;
+    }
+    
+    nav {
+        display: none;
+    }
+    
+    nav.active {
+        display: block;
+        width: 100%;
+    }
+    
+    nav ul {
+        flex-direction: column;
+    }
+    
+    nav ul li {
+        margin: 10px 0;
     }
 }
