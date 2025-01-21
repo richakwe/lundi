@@ -164,3 +164,52 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const paymentForm = document.getElementById('paymentForm');
+    const paymentMethod = document.getElementById('paymentMethod');
+    const cardDetails = document.getElementById('cardDetails');
+    const paymentStatus = document.getElementById('paymentStatus');
+    const statusMessage = document.getElementById('statusMessage');
+
+    paymentMethod.addEventListener('change', function() {
+        if (this.value === 'creditCard' || this.value === 'debitCard') {
+            cardDetails.classList.remove('hidden');
+        } else {
+            cardDetails.classList.add('hidden');
+        }
+    });
+
+    paymentForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Here you would typically send the payment data to a secure server for processing
+        // This is a mock example:
+        const paymentData = new FormData(this);
+        
+        // Mock payment processing (replace with actual API call)
+        fetch('/api/payment', {
+            method: 'POST',
+            body: paymentData
+        })
+        .then(response => response.json())
+        .then(data => {
+            if(data.success) {
+                paymentStatus.classList.remove('hidden');
+                paymentStatus.classList.add('success');
+                statusMessage.textContent = 'Payment Successful!';
+                // Clear form or redirect to a confirmation page
+            } else {
+                paymentStatus.classList.remove('hidden');
+                paymentStatus.classList.add('error');
+                statusMessage.textContent = 'Payment Failed: ' + data.message;
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            paymentStatus.classList.remove('hidden');
+            paymentStatus.classList.add('error');
+            statusMessage.textContent = 'An error occurred. Please try again later.';
+        });
+    });
+});
