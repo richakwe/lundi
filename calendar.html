@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar - Lundi Park Primary School</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="school-logo.png" alt="School Logo">
+        </div>
+        <button class="menu-toggle">Menu</button>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="academics.html">Academics</a></li>
+                <li><a href="admissions.html">Admissions</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="parent-portal.html">Parent Portal</a></li>
+                <li><a href="calendar.html">Calendar</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="calendar-section">
+            <h1>School Calendar</h1>
+            <p>View important dates, events, and schedules for the academic year.</p>
+
+            <div id='calendar'></div>
+
+            <div class="calendar-filters">
+                <label for="eventType">Filter Events:</label>
+                <select id="eventType">
+                    <option value="all">All Events</option>
+                    <option value="holiday">Holidays</option>
+                    <option value="academic">Academic</option>
+                    <option value="extracurricular">Extracurricular</option>
+                </select>
+            </div>
+
+            <div class="calendar-legend">
+                <h2>Legend</h2>
+                <ul>
+                    <li><span class="legend-item holiday"></span> Holiday</li>
+                    <li><span class="legend-item academic"></span> Academic Events</li>
+                    <li><span class="legend-item extracurricular"></span> Extracurricular Activities</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Lundi Park Primary School. All rights reserved.</p>
+        <div class="social-media">
+            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+                <img src="images/facebook.svg" alt="Follow us on Facebook" width="32" height="32">
+            </a>    
+            <a href="https://twitter.com/yourhandle" target="_blank" rel="noopener noreferrer">
+                <img src="images/twitter.svg" alt="Follow us on Twitter" width="32" height="32">
+            </a>
+    
+            <a href="https://www.instagram.com/yourusername" target="_blank" rel="noopener noreferrer">
+                <img src="images/instagram.svg" alt="Follow us on Instagram" width="32" height="32">
+    
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var calendarEl = document.getElementById('calendar');
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: 'dayGridMonth',
+                headerToolbar: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'dayGridMonth,timeGridWeek,timeGridDay'
+                },
+                events: [
+                    { title: 'School Starts', start: '2025-08-15', className: 'academic' },
+                    { title: 'Thanksgiving Break', start: '2025-11-24', end: '2025-11-28', className: 'holiday' },
+                    { title: 'Winter Concert', start: '2025-12-18', className: 'extracurricular' },
+                    // Add more events here
+                ],
+                eventClick: function(info) {
+                    alert('Event: ' + info.event.title + '\n' + 'Start: ' + info.event.start.toLocaleString());
+                }
+            });
+            
+            calendar.render();
+
+            const eventTypeFilter = document.getElementById('eventType');
+            eventTypeFilter.addEventListener('change', function() {
+                const filterType = this.value;
+                if (filterType === 'all') {
+                    calendar.getEvents().forEach(event => event.setProp('display', 'auto'));
+                } else {
+                    calendar.getEvents().forEach(event => {
+                        event.setProp('display', event.extendedProps.className.includes(filterType) ? 'auto' : 'none');
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

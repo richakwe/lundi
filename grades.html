@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grades - Lundi Park Primary School</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="school-logo.png" alt="School Logo">
+        </div>
+        <button class="menu-toggle">Menu</button>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="academics.html">Academics</a></li>
+                <li><a href="admissions.html">Admissions</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="parent-portal.html">Parent Portal</a></li>
+                <li><a href="grades.html">Grades</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="grades">
+            <h1>Grades & Progress</h1>
+            <p>Check your child's academic performance here.</p>
+
+            <div class="grade-selection">
+                <h2>Select Student and Term</h2>
+                <form id="gradeForm">
+                    <div class="form-group">
+                        <label for="studentId">Student ID:</label>
+                        <input type="text" id="studentId" name="studentId" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="term">Term:</label>
+                        <select id="term" name="term" required>
+                            <option value="">Select Term</option>
+                            <option value="Q1">Quarter 1</option>
+                            <option value="Q2">Quarter 2</option>
+                            <option value="Q3">Quarter 3</option>
+                            <option value="Q4">Quarter 4</option>
+                        </select>
+                    </div>
+                    <button type="submit">View Grades</button>
+                </form>
+            </div>
+
+            <div id="gradeDisplay" class="hidden">
+                <h2>Grades for <span id="selectedTerm"></span></h2>
+                <table id="gradeTable">
+                    <thead>
+                        <tr>
+                            <th>Subject</th>
+                            <th>Grade</th>
+                            <th>Teacher</th>
+                            <th>Comments</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Grades will be dynamically inserted here -->
+                    </tbody>
+                </table>
+                <div class="grade-summary">
+                    <p>GPA: <span id="gpa">0.0</span></p>
+                    <p>Rank: <span id="rank">#0</span></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Lundi Park Primary School. All rights reserved.</p>
+        <div class="social-media">
+            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+                <img src="images/facebook.svg" alt="Follow us on Facebook" width="32" height="32">
+            </a>    
+            <a href="https://twitter.com/yourhandle" target="_blank" rel="noopener noreferrer">
+                <img src="images/twitter.svg" alt="Follow us on Twitter" width="32" height="32">
+            </a>
+    
+            <a href="https://www.instagram.com/yourusername" target="_blank" rel="noopener noreferrer">
+                <img src="images/instagram.svg" alt="Follow us on Instagram" width="32" height="32">
+    
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const gradeForm = document.getElementById('gradeForm');
+            const gradeDisplay = document.getElementById('gradeDisplay');
+            const gradeTableBody = document.querySelector('#gradeTable tbody');
+            const selectedTermSpan = document.getElementById('selectedTerm');
+            const gpaSpan = document.getElementById('gpa');
+            const rankSpan = document.getElementById('rank');
+
+            gradeForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const studentId = this.studentId.value;
+                const term = this.term.value;
+
+                // Here you would typically make an API call to fetch grade data
+                // For this example, we'll simulate data:
+                const mockGradesData = [
+                    { subject: 'Math', grade: 'A', teacher: 'Mr. Smith', comments: 'Excellent work!' },
+                    { subject: 'Science', grade: 'B+', teacher: 'Ms. Johnson', comments: 'Good effort, keep improving.' },
+                    { subject: 'English', grade: 'B', teacher: 'Mrs. Davis', comments: 'Needs more participation.' },
+                    // Add more mock data as needed
+                ];
+
+                displayGrades(term, mockGradesData);
+            });
+
+            function displayGrades(term, data) {
+                gradeTableBody.innerHTML = '';
+                selectedTermSpan.textContent = term;
+
+                data.forEach(grade => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${grade.subject}</td>
+                        <td>${grade.grade}</td>
+                        <td>${grade.teacher}</td>
+                        <td>${grade.comments || '-'}</td>
+                    `;
+                    gradeTableBody.appendChild(row);
+                });
+
+                // Mock GPA and Rank calculation
+                const gpa = (Math.random() * 4).toFixed(2); // Random for example
+                const rank = Math.floor(Math.random() * 100) + 1;
+
+                gpaSpan.textContent = gpa;
+                rankSpan.textContent = `#${rank}`;
+
+                gradeDisplay.classList.remove('hidden');
+            }
+        });
+    </script>
+</body>
+</html>

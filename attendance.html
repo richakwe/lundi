@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance - Lundi Park Primary School</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/log.png" alt="School Logo">
+        </div>
+        <button class="menu-toggle">Menu</button>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="academics.html">Academics</a></li>
+                <li><a href="admissions.html">Admissions</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="parent-portal.html">Parent Portal</a></li>
+                <li><a href="attendance.html">Attendance</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="attendance">
+            <h1>Attendance Records</h1>
+            <p>Check your child's attendance history here.</p>
+
+            <div class="attendance-form">
+                <h2>Select Student</h2>
+                <form id="studentSelectForm">
+                    <div class="form-group">
+                        <label for="studentId">Student ID:</label>
+                        <input type="text" id="studentId" name="studentId" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="month">Select Month:</label>
+                        <select id="month" name="month" required>
+                            <option value="">Select Month</option>
+                            <option value="1">January</option>
+                            <option value="2">February</option>
+                            <option value="3">March</option>
+                            <!-- Add more options -->
+                        </select>
+                    </div>
+                    <button type="submit">View Attendance</button>
+                </form>
+            </div>
+
+            <div id="attendanceDisplay" class="hidden">
+                <h2>Attendance Details</h2>
+                <table id="attendanceTable">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Status</th>
+                            <th>Reason (if absent)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Attendance data will be displayed here -->
+                    </tbody>
+                </table>
+                <p id="summary">Total Days: <span id="totalDays">0</span> | Days Present: <span id="daysPresent">0</span> | Days Absent: <span id="daysAbsent">0</span></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Lundi Park Primary School. All rights reserved.</p>
+        <div class="social-media">
+            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+                <img src="images/facebook.svg" alt="Follow us on Facebook" width="32" height="32">
+            </a>    
+            <a href="https://twitter.com/yourhandle" target="_blank" rel="noopener noreferrer">
+                <img src="images/twitter.svg" alt="Follow us on Twitter" width="32" height="32">
+            </a>
+    
+            <a href="https://www.instagram.com/yourusername" target="_blank" rel="noopener noreferrer">
+                <img src="images/instagram.svg" alt="Follow us on Instagram" width="32" height="32">
+    
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const studentSelectForm = document.getElementById('studentSelectForm');
+            const attendanceDisplay = document.getElementById('attendanceDisplay');
+            const attendanceTableBody = document.querySelector('#attendanceTable tbody');
+            const summary = document.getElementById('summary');
+            const totalDays = document.getElementById('totalDays');
+            const daysPresent = document.getElementById('daysPresent');
+            const daysAbsent = document.getElementById('daysAbsent');
+
+            studentSelectForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const studentId = this.studentId.value;
+                const month = this.month.value;
+
+                // Here you would typically make an API call to fetch attendance data
+                // For this example, we'll simulate data:
+                const mockAttendanceData = [
+                    { date: '2025-01-01', status: 'Present' },
+                    { date: '2025-01-02', status: 'Absent', reason: 'Sick' },
+                    { date: '2025-01-03', status: 'Present' },
+                    // Add more mock data as needed
+                ];
+
+                displayAttendance(mockAttendanceData);
+            });
+
+            function displayAttendance(data) {
+                attendanceTableBody.innerHTML = '';
+                let presentCount = 0;
+                let absentCount = 0;
+
+                data.forEach(record => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${record.date}</td>
+                        <td>${record.status}</td>
+                        <td>${record.reason || '-'}</td>
+                    `;
+                    attendanceTableBody.appendChild(row);
+
+                    if (record.status === 'Present') {
+                        presentCount++;
+                    } else if (record.status === 'Absent') {
+                        absentCount++;
+                    }
+                });
+
+                totalDays.textContent = data.length;
+                daysPresent.textContent = presentCount;
+                daysAbsent.textContent = absentCount;
+
+                attendanceDisplay.classList.remove('hidden');
+            }
+        });
+    </script>
+</body>
+</html>

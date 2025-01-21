@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Communication - Lundi Park Primary School</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/log.png" alt="School Logo">
+        </div>
+        <button class="menu-toggle">Menu</button>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="academics.html">Academics</a></li>
+                <li><a href="admissions.html">Admissions</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="parent-portal.html">Parent Portal</a></li>
+                <li><a href="communication.html">Communication</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="communication">
+            <h1>Communication</h1>
+            <p>Send messages to teachers, counselors, or the administration.</p>
+
+            <div class="form-container">
+                <h2>Send a Message</h2>
+                <form id="messageForm">
+                    <div class="form-group">
+                        <label for="recipient">Recipient:</label>
+                        <select id="recipient" name="recipient" required>
+                            <option value="">Select Recipient</option>
+                            <option value="teacher">Teacher</option>
+                            <option value="counselor">Counselor</option>
+                            <option value="admin">Administration</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject:</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Your Message:</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="studentName">Student Name (optional):</label>
+                        <input type="text" id="studentName" name="studentName">
+                    </div>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+
+            <div class="communication-options">
+                <h2>Other Communication Options</h2>
+                <ul>
+                    <li><a href="mailto:info@sampleschool.edu">Email Us</a></li>
+                    <li><a href="tel:+1234567890">Call Us</a></li>
+                    <li><a href="parent-teacher-conferences.html">Schedule Parent-Teacher Conference</a></li>
+                    <li><a href="newsletter-signup.html">Subscribe to Our Newsletter</a></li>
+                    <li><a href="emergency-contact.html">Emergency Contact</a></li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Lundi Park Primary School. All rights reserved.</p>
+        <div class="social-media">
+            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+                <img src="images/facebook.svg" alt="Follow us on Facebook" width="32" height="32">
+            </a>    
+            <a href="https://twitter.com/yourhandle" target="_blank" rel="noopener noreferrer">
+                <img src="images/twitter.svg" alt="Follow us on Twitter" width="32" height="32">
+            </a>
+    
+            <a href="https://www.instagram.com/yourusername" target="_blank" rel="noopener noreferrer">
+                <img src="images/instagram.svg" alt="Follow us on Instagram" width="32" height="32">
+    
+        </div>
+    </footer>
+</body>
+</html>
